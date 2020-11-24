@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var projects = []
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -19,21 +21,21 @@ struct ContentView: View {
                 Group{ // The group for the Enlighten Me
                     VStack{
                         HStack{
-                            Text("Title")
-                                .padding()
+                            Text("   About Projects: ") // The Space Bars are for the better looking view
                             Spacer()
                         }
                         HStack{
                             HStack{
-                                Text("Navigation View")
-                                Text("Navigation View")
+                                ForEach(0..<10){index in
+                                    AboutProjectLinkView()
+                                }
                             }
                         }
                     }
                 }
                 
-                Spacer()
                 
+                Spacer() 
                 HStack{ // Bottom Of the Screen Stuff
                     Text("Bottom Of the Screen Buttons View")
                 }
