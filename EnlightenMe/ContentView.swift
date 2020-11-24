@@ -16,7 +16,7 @@ struct ContentView: View {
             VStack{
                 ScrollView{
                     Text("Enlighten Me")
-                        .font(.body)
+                        .font(.largeTitle)
                         .fontWeight(.ultraLight)
                         .foregroundColor(Color.gray)
                     
@@ -50,10 +50,8 @@ struct ContentView: View {
                 }
             }
         }
-        
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
