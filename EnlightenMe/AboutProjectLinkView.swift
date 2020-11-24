@@ -10,17 +10,18 @@ import SwiftUI
 // This will be how the navigation link will look like in the first page
 // There will be another one that is in to more detail
 struct AboutProjectLinkView: View {
-    @State private var Picture_Name = "AboutProjectLinkView-Placeholder"
-    
-    @State private var ProjectName = "Real Human Face GAN"
+    private var Data:AboutProjectLinkData
+    init(Data: AboutProjectLinkData){
+        self.Data = Data
+    }
     
     var body: some View {
         VStack{            
-            Image(Picture_Name).resizable()
+            Image(Data.imageName).resizable()
                 .frame(width: 500/3, height: 400/3)
             
             
-            Text(self.ProjectName)
+            Text(Data.projectName)
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 
@@ -32,6 +33,6 @@ struct AboutProjectLinkView: View {
 
 struct AboutProjectLinkView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutProjectLinkView()
+        AboutProjectLinkView(Data: getAboutProjectLinkData()[0])
     }
 }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var projects = []
-    @State private var domain = ""
+    @State private var aboutProjectLinkInfo:[AboutProjectLinkData] = getAboutProjectLinkData() // Data for the about project link view
+    @State private var domain:String = "" // The domain of the api
     
     var body: some View {
         NavigationView{
@@ -23,16 +23,17 @@ struct ContentView: View {
                     Group{ // The group for the Enlighten Me
                         VStack{
                             HStack{
-                                Text("   About Projects: ") // The Space Bars are for the better looking view
+                                Text("   About Projects:") // The Space Bars are for the better looking view
                                 Spacer()
                             }
                             
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{ // The Navigation Link for About Project Page
                                     HStack{
-                                        ForEach(0..<10){index in
+                                        ForEach(0..<aboutProjectLinkInfo.count){index in
                                             NavigationLink(destination: Text("PlaceHolder") ){
-                                                AboutProjectLinkView()
+                                                AboutProjectLinkView(Data: aboutProjectLinkInfo[index])
+                                                
                                             }
                                         }
                                     }
@@ -40,9 +41,9 @@ struct ContentView: View {
                                 
                             }
                         }
-                        
-                        
                     }
+                    
+                    
                 }
                 Spacer()
                 HStack{ // Bottom Of the Screen Stuff
