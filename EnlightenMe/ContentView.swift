@@ -19,7 +19,6 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontWeight(.ultraLight)
                         .foregroundColor(Color.gray)
-                    
                     Group{ // The group for the Enlighten Me
                         VStack{
                             HStack{
@@ -45,8 +44,21 @@ struct ContentView: View {
                         }
                     }
                     
+                    Group{ // Trending I guess
+                        VStack{ // The content of the top pick
+                            HStack{
+                                Text("   Trending Pictures:")
+                                Spacer()
+                            }
+                        }
+                        ForEach(0..<10){ index in
+                            FakeContentPostView()
+                            Spacer()
+                        }
+                    }
                     
                 }
+                
                 Spacer()
                 BottomButtonPickerView() // The bottom of the project Page
             }
