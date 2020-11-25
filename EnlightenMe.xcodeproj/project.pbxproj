@@ -16,6 +16,7 @@
 		E54E6892256D9BAE0034D356 /* AboutProjectLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6891256D9BAE0034D356 /* AboutProjectLinkView.swift */; };
 		E54E6897256DA3E30034D356 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E6896256DA3E30034D356 /* Utils.swift */; };
 		E54E689C256DA3EE0034D356 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54E689B256DA3EE0034D356 /* DataStructures.swift */; };
+		E5C25A64256E994800AF6D72 /* BottomButtonPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C25A63256E994800AF6D72 /* BottomButtonPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E54E6891256D9BAE0034D356 /* AboutProjectLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProjectLinkView.swift; sourceTree = "<group>"; };
 		E54E6896256DA3E30034D356 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E54E689B256DA3EE0034D356 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		E5C25A63256E994800AF6D72 /* BottomButtonPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E54E6891256D9BAE0034D356 /* AboutProjectLinkView.swift */,
 				E54E6896256DA3E30034D356 /* Utils.swift */,
 				E54E689B256DA3EE0034D356 /* DataStructures.swift */,
+				E5C25A63256E994800AF6D72 /* BottomButtonPickerView.swift */,
 			);
 			path = EnlightenMe;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				E54E685E256D94670034D356 /* ContentView.swift in Sources */,
 				E54E689C256DA3EE0034D356 /* DataStructures.swift in Sources */,
 				E54E6892256D9BAE0034D356 /* AboutProjectLinkView.swift in Sources */,
+				E5C25A64256E994800AF6D72 /* BottomButtonPickerView.swift in Sources */,
 				E54E685C256D94670034D356 /* EnlightenMeApp.swift in Sources */,
 				E54E6897256DA3E30034D356 /* Utils.swift in Sources */,
 			);
