@@ -15,11 +15,11 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 ScrollView{
-                    Text("Enlighten Me")
-                        .font(.largeTitle)
-                        .fontWeight(.ultraLight)
-                        .foregroundColor(Color.gray)
-                    
+//                    Text("Enlighten Me")
+//                        .font(.largeTitle)
+//                        .fontWeight(.ultraLight)
+//                        .foregroundColor(Color.gray)
+
                     Group{ // The group for the Enlighten Me
                         VStack{
                             HStack{
@@ -64,6 +64,7 @@ struct ContentView: View {
                 Spacer()
                 BottomButtonPickerView() // The bottom of the project Page
             }
+            .navigationBarTitle("Enlighten Me")
         }
     }
 }
