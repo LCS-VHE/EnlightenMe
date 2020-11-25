@@ -12,12 +12,20 @@ struct BottomButtonPickerView: View {
         HStack{
             Spacer()
             NavigationLink(destination: Text("PlaceHolder")){
-                Image("Instagram Logo").resizable().frame(width: 50, height:50)
+                Image("Home Logo").resizable().frame(width: 40, height:40)
             }
+            
             Spacer()
             NavigationLink(destination: Text("PlaceHolder")){
-                Image("Utilities Logo").resizable().frame(width:50, height: 50)
+                Image("Instagram Logo").resizable().frame(width: 40, height:40)
             }
+            
+            Spacer()
+            
+            NavigationLink(destination: Text("PlaceHolder")){
+                Image("Utilities Logo").resizable().frame(width:40, height: 40)
+            }
+            
             Spacer()
         }
     }
