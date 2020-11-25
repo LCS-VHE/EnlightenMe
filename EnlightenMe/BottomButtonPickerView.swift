@@ -22,7 +22,7 @@ struct BottomButtonPickerView: View {
             
             Spacer()
             
-            NavigationLink(destination: Text("PlaceHolder")){
+            NavigationLink(destination: ToolsNavigation()){
                 Image("Utilities Logo").resizable().frame(width:40, height: 40)
             }
             
