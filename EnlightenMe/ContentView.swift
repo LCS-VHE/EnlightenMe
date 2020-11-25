@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var aboutProjectLinkInfo:[AboutProjectLinkData] = getAboutProjectLinkData() // Data for the about project link view
-    @State private var domain:String = "" // The domain of the api
+    private var domain:String = Constants().domain // The domain of the api
     
     var body: some View {
         NavigationView{
