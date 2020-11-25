@@ -46,14 +46,15 @@ struct ContentView: View {
                     
                     Group{ // Trending I guess
                         VStack{ // The content of the top pick
-                            HStack{
+                            HStack{ // Title
                                 Text("   Trending Pictures:")
                                 Spacer()
                             }
-                        }
-                        ForEach(0..<10){ index in
-                            FakeContentPostView()
-                            Spacer()
+                            
+                            ForEach(0..<10){ index in // The Content Post View
+                                ContentPostView()
+                                Spacer()
+                            }
                         }
                     }
                     
