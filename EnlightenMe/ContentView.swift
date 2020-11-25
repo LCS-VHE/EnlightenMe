@@ -27,7 +27,7 @@ struct ContentView: View {
                                 Spacer()
                             }
                             
-                            ScrollView(.horizontal, showsIndicators: false){
+                            ScrollView(.horizontal, showsIndicators: false){ // The scroll View
                                 HStack{ // The Navigation Link for About Project Page
                                     HStack{
                                         ForEach(0..<aboutProjectLinkInfo.count){index in
@@ -40,15 +40,15 @@ struct ContentView: View {
                                 }
                                 
                             }
+                            
+                            
                         }
                     }
                     
                     
                 }
                 Spacer()
-                HStack{ // Bottom Of the Screen Stuff
-                    Text("Bottom Of the Screen Buttons View")
-                }
+                BottomButtonPickerView() // The bottom of the project Page
             }
         }
     }
