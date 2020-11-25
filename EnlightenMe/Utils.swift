@@ -8,8 +8,8 @@
 import Foundation
 
 func getAboutProjectLinkData() -> [AboutProjectLinkData] {
-    let image_names = ["AboutProjectLinkView-Placeholder"]
-    let project_names = ["Neural Styel Transfere"]
+    let image_names = ["AboutProjectLinkView-Placeholder", "Anime-Face-Placeholder"]
+    let project_names = ["Neural Styel Transfere", "Anime Face Generator"]
     var result = [AboutProjectLinkData]()
     
     for index in 0..<image_names.count{ // Mergering the list and adding the object
