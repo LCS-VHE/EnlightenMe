@@ -14,11 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Text("Enlighten Me")
+                    .font(.largeTitle)
+                    .fontWeight(.ultraLight)
+                    .foregroundColor(Color.gray)
                 ScrollView{
-                    Text("Enlighten Me")
-                        .font(.largeTitle)
-                        .fontWeight(.ultraLight)
-                        .foregroundColor(Color.gray)
                     Group{ // The group for the Enlighten Me
                         VStack{
                             HStack{
