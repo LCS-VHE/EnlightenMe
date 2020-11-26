@@ -22,7 +22,10 @@ struct ContentPostView: View {
             }
             
             // THe post Image
-            Image("PostImage-PlaceHolder").resizable().scaledToFit()
+            Image("PostImage-PlaceHolder")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 390, height: 390)
             
             HStack{    // Images at the bottom to make it look good
                 Image("Like").resizable().frame(width:35, height: 35)
@@ -32,7 +35,7 @@ struct ContentPostView: View {
                 
                 Text("Made With \(self.madeWith)")
                     .multilineTextAlignment(.center)
-                Spacer()
+                
             }
         }
     }
