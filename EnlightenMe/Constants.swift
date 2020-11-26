@@ -9,5 +9,5 @@ import Foundation
 
 struct Constants{
     var apiGateWay:String = ""
-    var domain:String = ""
+    var domain:String = "https://a0383e4ab799.ngrok.io"
 }
