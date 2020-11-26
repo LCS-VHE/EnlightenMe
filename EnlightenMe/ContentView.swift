@@ -13,7 +13,7 @@ struct ContentView: View {
             HomePageView()
                 .tabItem{
                     Image(systemName: "star.fill") // Place holder image
-                    Text("Home Page") // Title Home Pag
+                    Text("Home Page") // Title Home Page
                 }
             
             ToolsNavigation()
