@@ -22,7 +22,7 @@ struct ContentPostView: View {
             }
             
             // THe post Image
-            Image("PostImage-PlaceHolder").resizable().frame(width:.infinity, height: 400)
+            Image("PostImage-PlaceHolder").resizable().scaledToFit()
             
             HStack{    // Images at the bottom to make it look good
                 Image("Like").resizable().frame(width:35, height: 35)
