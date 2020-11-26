@@ -41,9 +41,9 @@ struct ToolsNavigation: View {
                         
                     }}
             }
-            
+         
+            .navigationBarTitle("Tools")
         }
-        .navigationBarTitle("Tools")
     }
 }
 
