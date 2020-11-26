@@ -16,6 +16,12 @@ struct ContentView: View {
                     Text("Home Page") // Title Home Pag
                 }
             
+            ToolsNavigation()
+                .tabItem{
+                    Image(systemName: "star.fill")
+                    Text("Utility")
+                }
+            
         }
     }
 }
