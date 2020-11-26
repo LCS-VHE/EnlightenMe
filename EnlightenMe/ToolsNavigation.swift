@@ -34,7 +34,6 @@ struct ToolsNavigation: View {
                 }
                 Spacer()
                 
-                BottomButtonPickerView()
             }
             .navigationBarTitle("Tools")
         }
