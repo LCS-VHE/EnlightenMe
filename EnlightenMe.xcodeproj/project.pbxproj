@@ -20,6 +20,7 @@
 		E5C25A69256EAB9E00AF6D72 /* FakeContentPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C25A68256EAB9E00AF6D72 /* FakeContentPostView.swift */; };
 		E5C25A6E256EB4B900AF6D72 /* ToolsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C25A6D256EB4B900AF6D72 /* ToolsNavigation.swift */; };
 		E5C25A73256EB58E00AF6D72 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C25A72256EB58E00AF6D72 /* Constants.swift */; };
+		E5D793D125705EDC003C0AED /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D793D025705EDC003C0AED /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E5C25A68256EAB9E00AF6D72 /* FakeContentPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeContentPostView.swift; sourceTree = "<group>"; };
 		E5C25A6D256EB4B900AF6D72 /* ToolsNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsNavigation.swift; sourceTree = "<group>"; };
 		E5C25A72256EB58E00AF6D72 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E5D793D025705EDC003C0AED /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				E5C25A68256EAB9E00AF6D72 /* FakeContentPostView.swift */,
 				E5C25A6D256EB4B900AF6D72 /* ToolsNavigation.swift */,
 				E5C25A72256EB58E00AF6D72 /* Constants.swift */,
+				E5D793D025705EDC003C0AED /* HomePageView.swift */,
 			);
 			path = EnlightenMe;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				E5C25A6E256EB4B900AF6D72 /* ToolsNavigation.swift in Sources */,
 				E54E689C256DA3EE0034D356 /* DataStructures.swift in Sources */,
 				E54E6892256D9BAE0034D356 /* AboutProjectLinkView.swift in Sources */,
+				E5D793D125705EDC003C0AED /* HomePageView.swift in Sources */,
 				E5C25A64256E994800AF6D72 /* BottomButtonPickerView.swift in Sources */,
 				E54E685C256D94670034D356 /* EnlightenMeApp.swift in Sources */,
 				E5C25A69256EAB9E00AF6D72 /* FakeContentPostView.swift in Sources */,
