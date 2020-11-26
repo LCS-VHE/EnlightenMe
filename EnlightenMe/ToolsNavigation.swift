@@ -17,8 +17,12 @@ struct ToolsNavigation: View {
                 }
                 VStack{
                     List{
-                        NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
-                            Text("Anime Face Creator")
+                        NavigationLink(destination: AnimeFaceCreating()){ // Link to anime face creator
+                            HStack{
+                                Text("Anime Face Creator")
+                                Spacer()
+                                Image("Anime-Face-Placeholder").resizable().frame(width:50, height: 50)
+                            }
                         }
                         
                         NavigationLink(destination: Text("Place Holder")){ // Neural Style Transfere
