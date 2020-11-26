@@ -15,24 +15,29 @@ struct ToolsNavigation: View {
                     Text("    A List of Tools:")
                     Spacer()
                 }
-                ScrollView{
-                    NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
-                        Text("Anime Face Creator")
+                VStack{
+                    List{
+                        NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
+                            Text("Anime Face Creator")
+                        }
+                        
+                        NavigationLink(destination: Text("Place Holder")){ // Neural Style Transfere
+                            Text("Neural Style Transfere")
+                        }
+                        
+                        NavigationLink(destination: Text("Place Holder")){ // Real Human Face Creator
+                            Text("Real Human Face Creator")
+                        }
+                        
+                        NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
+                            Text("William Shakespeare Generator")
+                        }
                     }
                     
-                    NavigationLink(destination: Text("Place Holder")){ // Neural Style Transfere
-                        Text("Neural Style Transfere")
-                    }
-                    
-                    NavigationLink(destination: Text("Place Holder")){ // Real Human Face Creator
-                        Text("Real Human Face Creator")
-                    }
-                    
-                    NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
-                        Text("William Shakespeare Generator")
-                    }
                 }
-                Spacer()
+                
+                
+                
                 
             }
             .navigationBarTitle("Tools")
