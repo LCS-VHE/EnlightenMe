@@ -22,7 +22,12 @@ struct ToolsNavigation: View {
                         }
                         
                         NavigationLink(destination: Text("Place Holder")){ // Neural Style Transfere
-                            Text("Neural Style Transfere")
+                            
+                            HStack{ // Showing image in A List
+                                Text("Neural Style Transfere")
+                                Spacer()
+                                Image("PostImage-PlaceHolder").resizable().frame(width:50, height: 50) // Place holder Image
+                            }
                         }
                         
                         NavigationLink(destination: Text("Place Holder")){ // Real Human Face Creator
@@ -32,18 +37,16 @@ struct ToolsNavigation: View {
                         NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
                             Text("William Shakespeare Generator")
                         }
-                    }
-                    
-                }
-                
-                
-                
-                
+                        
+                        
+                    }}
             }
-            .navigationBarTitle("Tools")
+            
         }
+        .navigationBarTitle("Tools")
     }
 }
+
 
 struct ToolsNavigation_Previews: PreviewProvider {
     static var previews: some View {
