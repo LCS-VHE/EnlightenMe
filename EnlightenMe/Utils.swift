@@ -19,3 +19,26 @@ func getAboutProjectLinkData() -> [AboutProjectLinkData] {
     return result
     
 }
+
+func getAnimeFaceRequestLink(parms:[Double]) ->String {
+    var url = "\(Constants().domain)/show_img?"
+    
+    for i in 0..<33{
+        if i != 32{
+            url += "row\(i)=\(parms[i])&"
+        }else {
+            url += "row\(i)=\(parms[i])"
+        }
+    }
+    return url
+}
+
+func setupFaceCreatingUrlParms() -> [Double]{
+    var urls = [Double]()
+    
+    for _ in 0..<34{
+        urls.append(0)
+    }
+    
+    return urls
+}
