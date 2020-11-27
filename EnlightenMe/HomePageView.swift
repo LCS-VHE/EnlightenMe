@@ -46,7 +46,7 @@ struct HomePageView: View {
                     }
                     Group{
                         HStack{ // Title
-                            Text("   Trending Pictures:")
+                            Text("   Followed User Post:")
                             Spacer()
                         }
                         

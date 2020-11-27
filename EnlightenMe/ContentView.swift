@@ -22,11 +22,18 @@ struct ContentView: View {
                     Text("Utility")
                 }
             
+            ExplorePage()
+                .tabItem{
+                    Image(systemName: "star.fill")
+                    Text("Explore")
+                }
+            
             ProfilePage()
                 .tabItem{
                     Image(systemName: "star.fill")
                     Text("Profile Page")
                 }
+        
         }
     }
 }
