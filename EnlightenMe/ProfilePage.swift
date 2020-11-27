@@ -43,7 +43,10 @@ struct ProfilePage: View {
                     }
                     Divider() // A line diving stuff
                     Group{ // A list of posts
-                        
+                        ForEach(0..<10){ num in
+                            SquareBoxPostView()
+                            
+                        }
                     }
                     
                     Spacer()
