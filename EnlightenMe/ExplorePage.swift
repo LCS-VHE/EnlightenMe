@@ -13,12 +13,17 @@ struct ExplorePage: View {
             ScrollView{
                 VStack{
                     
+                    HStack{ // Trending Title
+                        Text("Trending")
+                        Spacer()
+                    }
+                    
                     Group{ // Trending
                         ForEach(0..<2){ num in
                             HStack{
-                                Text("Trending")
-                                Text("Trending")
-                                Text("Trending")
+                                NavigationLink(destination: Text("PlaceHolder")){
+                                        SquareBoxPostView()
+                                    }
                             }
                         }
                     }
@@ -32,10 +37,8 @@ struct ExplorePage: View {
                     
                     Group{ // Random Posts
                         ForEach(0..<10){ num in
-                            HStack{
-                                Text("Posts")
-                                Text("Posts")
-                                Text("Posts")
+                            NavigationLink(destination: Text("PlaceHolder")){
+                                SquareBoxPostView()
                             }
                         }
                     }
