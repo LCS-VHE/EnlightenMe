@@ -24,7 +24,7 @@ struct AnimeFaceCreating: View {
                 
                 WebImage(url:URL(string:self.request_url)).resizable().frame(width:350, height:350)
                 
-                Button("Show Image"){
+                Button("Upload"){
                     self.request_url = getAnimeFaceRequestLink(parms: self.url_parms)
                 }
                 ForEach(0..<34/2){num in
