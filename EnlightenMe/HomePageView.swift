@@ -51,7 +51,7 @@ struct HomePageView: View {
                         }
                         
                         ForEach(0..<10){ index in // The Content Post View
-                            ContentPostView()
+                            SimpleConetentPostView()
                         }
                         
                         
