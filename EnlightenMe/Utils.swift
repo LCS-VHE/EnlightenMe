@@ -42,3 +42,8 @@ func setupFaceCreatingUrlParms() -> [Double]{
     
     return urls
 }
+
+func uploadAnimeFace() -> Bool{ // Upload Anime Face return if it has succeeded
+    
+    return true
+}
