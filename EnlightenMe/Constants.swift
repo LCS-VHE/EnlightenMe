@@ -11,3 +11,8 @@ struct Constants{
     var apiGateWay:String = ""
     var domain:String = "https://a0383e4ab799.ngrok.io"
 }
+
+struct ApiKey{
+    var userId:String = ""
+    var uploadKey:String = ""
+}
