@@ -22,9 +22,13 @@ struct AnimeFaceCreating: View {
                 Text("Welcome To Anime Face Creator")
                 Text("Pro tip: double tap to show image")
                 
+                NavigationLink(destination: UploadAnimeFaceView() ){
+                    Text("Share")
+                }
+                
                 WebImage(url:URL(string:self.request_url)).resizable().frame(width:350, height:350)
                 
-                Button("Upload"){
+                Button("Show Image"){
                     self.request_url = getAnimeFaceRequestLink(parms: self.url_parms)
                 }
                 ForEach(0..<34/2){num in
