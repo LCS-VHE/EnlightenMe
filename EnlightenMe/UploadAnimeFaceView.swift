@@ -9,8 +9,8 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct UploadAnimeFaceView: View {
-    @State var upload_text = "Write a Caption"
-    @State var title = "Write a title"
+    @State var upload_text = ""
+    @State var title = ""
     @State private var isPrivate = false
     @State var imageParms:[Double] = []
     @State private var tags:[String] = ["", "", ""]
