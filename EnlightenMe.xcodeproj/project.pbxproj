@@ -23,6 +23,7 @@
 		E5D793D125705EDC003C0AED /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D793D025705EDC003C0AED /* HomePageView.swift */; };
 		E5D793D72570660D003C0AED /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E5D793D62570660D003C0AED /* SDWebImageSwiftUI */; };
 		E5D793DC25706BD8003C0AED /* AnimeFaceCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D793DB25706BD8003C0AED /* AnimeFaceCreating.swift */; };
+		E5D793E125707586003C0AED /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D793E025707586003C0AED /* ProfilePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		E5C25A72256EB58E00AF6D72 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5D793D025705EDC003C0AED /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		E5D793DB25706BD8003C0AED /* AnimeFaceCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeFaceCreating.swift; sourceTree = "<group>"; };
+		E5D793E025707586003C0AED /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				E5C25A72256EB58E00AF6D72 /* Constants.swift */,
 				E5D793D025705EDC003C0AED /* HomePageView.swift */,
 				E5D793DB25706BD8003C0AED /* AnimeFaceCreating.swift */,
+				E5D793E025707586003C0AED /* ProfilePage.swift */,
 			);
 			path = EnlightenMe;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				E54E6892256D9BAE0034D356 /* AboutProjectLinkView.swift in Sources */,
 				E5D793D125705EDC003C0AED /* HomePageView.swift in Sources */,
 				E5C25A64256E994800AF6D72 /* BottomButtonPickerView.swift in Sources */,
+				E5D793E125707586003C0AED /* ProfilePage.swift in Sources */,
 				E54E685C256D94670034D356 /* EnlightenMeApp.swift in Sources */,
 				E5C25A69256EAB9E00AF6D72 /* FakeContentPostView.swift in Sources */,
 				E54E6897256DA3E30034D356 /* Utils.swift in Sources */,

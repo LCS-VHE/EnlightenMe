@@ -35,7 +35,10 @@ struct ProfilePage: View {
                                 .multilineTextAlignment(.center)
                             Spacer()
                         }
-                        
+                        HStack{ // Showing UserName
+                            Text("      \(userName)")
+                            Spacer()
+                        }
                         
                     }
                     Divider() // A line diving stuff
