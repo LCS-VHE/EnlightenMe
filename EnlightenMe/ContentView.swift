@@ -22,6 +22,11 @@ struct ContentView: View {
                     Text("Utility")
                 }
             
+            ProfilePage()
+                .tabItem{
+                    Image(systemName: "star.fill")
+                    Text("Profile Page")
+                }
         }
     }
 }
