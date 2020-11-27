@@ -9,7 +9,41 @@ import SwiftUI
 
 struct ExplorePage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                VStack{
+                    
+                    Group{ // Trending
+                        ForEach(0..<2){ num in
+                            HStack{
+                                Text("Trending")
+                                Text("Trending")
+                                Text("Trending")
+                            }
+                        }
+                    }
+                    
+                    Divider()
+                    HStack{ // Other Post
+                        Text("Other Posts").padding()
+                        Spacer()
+                    }
+                    Spacer()
+                    
+                    Group{ // Random Posts
+                        ForEach(0..<10){ num in
+                            HStack{
+                                Text("Posts")
+                                Text("Posts")
+                                Text("Posts")
+                            }
+                        }
+                    }
+                    
+                }
+                .navigationBarTitle("Explore")
+            }
+        }
     }
 }
 
