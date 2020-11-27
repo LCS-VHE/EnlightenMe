@@ -12,7 +12,9 @@ struct SquareBoxPostView: View {
     var body: some View {
         HStack{
             ForEach(0..<imagesName.count){ num in
-                Image(imagesName[num]).resizable().scaledToFit()
+                NavigationLink(destination: Text("Place Holder \(num)")){
+                    Image(imagesName[num]).resizable().scaledToFit()
+                }
             }
         }
     }

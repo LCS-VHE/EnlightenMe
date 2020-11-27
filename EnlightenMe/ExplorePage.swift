@@ -37,9 +37,7 @@ struct ExplorePage: View {
                     
                     Group{ // Random Posts
                         ForEach(0..<10){ num in
-                            NavigationLink(destination: Text("PlaceHolder")){
-                                SquareBoxPostView()
-                            }
+                            SquareBoxPostView()
                         }
                     }
                     
