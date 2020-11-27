@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentPostView: View {
+struct SimpleConetentPostView: View {
     @State private var ProfilePictures = "ProfilePicture Placeholder"
     @State private var ProfileName = "PlaceHolder Name"
     @State private var madeWith = "Neural Style Transfere"
@@ -43,6 +43,6 @@ struct ContentPostView: View {
 
 struct FakeContentPostView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentPostView()
+        SimpleConetentPostView()
     }
 }
