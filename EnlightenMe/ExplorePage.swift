@@ -21,9 +21,7 @@ struct ExplorePage: View {
                     Group{ // Trending
                         ForEach(0..<2){ num in
                             HStack{
-                                NavigationLink(destination: Text("PlaceHolder")){
-                                        SquareBoxPostView()
-                                    }
+                                SquareBoxPostView()
                             }
                         }
                     }
