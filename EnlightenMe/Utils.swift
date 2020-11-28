@@ -21,7 +21,7 @@ func getAboutProjectLinkData() -> [AboutProjectLinkData] {
 }
 
 func getAnimeFaceRequestLink(parms:[Double]) ->String {
-    var url = "\(Constants().domain)/show_img?"
+    var url = "\(Constants().domain)/getanimeface?"
     
     for i in 0..<33{
         if i != 32{
@@ -43,7 +43,4 @@ func setupFaceCreatingUrlParms() -> [Double]{
     return urls
 }
 
-func uploadAnimeFace() -> Bool{ // Upload Anime Face return if it has succeeded
-    
-    return true
-}
+
