@@ -21,6 +21,7 @@ class AnimeFaceUploadData: ObservableObject, Codable{
     @Published var isPrivate = false
     @Published var imageParms:[Double] = setupFaceCreatingUrlParms()
     @Published var tags:[String] = ["", "", ""]
+    @Published var userName = "Debug User" // Change in the future to actual user Name
     
     init(){}
     
