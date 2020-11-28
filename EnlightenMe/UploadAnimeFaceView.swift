@@ -44,20 +44,20 @@ struct UploadAnimeFaceView: View {
                 }
             }
             
-//            // Showing a list of tags
-//            VStack{ // For Debugging
-//                Text("\(tags[0]), \(tags[1]), \(tags[2])")
-//            }
-        
-        Spacer() // Pushing the view to the top
-            .navigationBarTitle("New Post")
-            .navigationBarItems(trailing:
-                                    Button("Upload") { // Uploading the anime Face View
-                                        _ = uploadAnimeFace()
-                                    }
-            )
-    }
-}
+            //            // Showing a list of tags
+            //            VStack{ // For Debugging
+            //                Text("\(tags[0]), \(tags[1]), \(tags[2])")
+            //            }
+            
+            Spacer() // Pushing the view to the top
+                .navigationBarTitle("New Post")
+                .navigationBarItems(trailing:
+                                        Button("Upload") { // Uploading the anime Face View
+                                            _ = uploadAnimeFace()
+                                        }
+                )
+        }
+    }
 }
 
 struct UploadAnimeFaceView_Previews: PreviewProvider {
