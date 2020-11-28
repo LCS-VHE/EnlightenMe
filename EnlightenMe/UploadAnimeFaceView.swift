@@ -53,11 +53,45 @@ struct UploadAnimeFaceView: View {
                 .navigationBarTitle("New Post")
                 .navigationBarItems(trailing:
                                         Button("Upload") { // Uploading the anime Face View
-                                            _ = uploadAnimeFace()
+                                            uploadAnimeFace()
                                         }
                 )
         }
-    }
+    }
+   
+    func uploadAnimeFace(){ // Upload Anime Face return if it has succeeded
+        // Sending json data to the server
+        guard let encodedJson = try? JSONEncoder().encode(uploadData) else { // Encoding json data
+            print("Failed to encode order")
+            return
+        }
+        
+        let url = URL(string: "\(Constants().domain)/upload_anime_face")!
+        var request = URLRequest(url: url) // Requests with the given url
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type") // HTTP header as json
+        request.httpMethod = "POST" // Post requests
+        request.httpBody = encodedJson // Body as encoded file
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            // handle the result here.
+            guard let unwrapData = String(bytes: data!, encoding: .utf8) else {
+                // When not successs
+                print("Not Success")
+                return
+            }
+            
+            if "<h1> Success! </h1>" == unwrapData{
+                // When successs
+                print("Success")
+                return
+            }
+            
+        }.resume()
+
+        print("Not Success")
+
+        
+    }
 }
 
 struct UploadAnimeFaceView_Previews: PreviewProvider {
