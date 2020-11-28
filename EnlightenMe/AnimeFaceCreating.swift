@@ -10,8 +10,7 @@ import SDWebImageSwiftUI
 
 
 struct AnimeFaceCreating: View {
-    @State private var url_parms = setupFaceCreatingUrlParms()
-    //    @State private var num_of_sliders = 34
+    @ObservedObject  var uploadData = AnimeFaceUploadData()
     @State private var num_of_sliders:Double = 0
     @State private var request_url = getAnimeFaceRequestLink(parms: setupFaceCreatingUrlParms())
     
@@ -22,25 +21,25 @@ struct AnimeFaceCreating: View {
                 Text("Welcome To Anime Face Creator")
                 Text("Pro tip: double tap to show image")
                 
-                NavigationLink(destination: UploadAnimeFaceView() ){
+                NavigationLink(destination: UploadAnimeFaceView(uploadData: self.uploadData) ){
                     Text("Share")
                 }
                 
                 WebImage(url:URL(string:self.request_url)).resizable().frame(width:350, height:350)
                 
                 Button("Show Image"){
-                    self.request_url = getAnimeFaceRequestLink(parms: self.url_parms)
+                    self.request_url = getAnimeFaceRequestLink(parms: self.uploadData.imageParms)
                 }
                 ForEach(0..<34/2){num in
                     HStack{
-                        Slider(value: $url_parms[num * 2], in: -10...10 )
-                        Slider(value: $url_parms[num * 2 + 1], in: -10...10 )
+                        Slider(value: $uploadData.imageParms[num * 2], in: -10...10 )
+                        Slider(value: $uploadData.imageParms[num * 2 + 1], in: -10...10 )
                         
                     }
                 }
                 
             }.onTapGesture(count: 2) {
-                self.request_url = getAnimeFaceRequestLink(parms: self.url_parms)
+                self.request_url = getAnimeFaceRequestLink(parms: uploadData .imageParms)
             }
         }
         .navigationTitle("Anime Face Creator")

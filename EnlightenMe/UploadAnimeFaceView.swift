@@ -9,11 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct UploadAnimeFaceView: View {
-    @State var upload_text = ""
-    @State var title = ""
-    @State private var isPrivate = false
-    @State var imageParms:[Double] = []
-    @State private var tags:[String] = ["", "", ""]
+    @ObservedObject var uploadData:AnimeFaceUploadData
     
     
     var body: some View {
@@ -23,9 +19,9 @@ struct UploadAnimeFaceView: View {
                 WebImage(url:URL(string: getAnimeFaceRequestLink(parms: setupFaceCreatingUrlParms()))).resizable().frame(width:95, height:95)
                 Spacer()
                 VStack{
-                    TextField("Enter a title.....", text:$title)
+                    TextField("Enter a title.....", text:$uploadData.title)
                     Divider() // Divide two different textfield
-                    TextField("Enter captinos:.....", text:$upload_text)
+                    TextField("Enter captinos:.....", text:$uploadData.captions)
                 }
             }
             Divider()
@@ -33,7 +29,7 @@ struct UploadAnimeFaceView: View {
             HStack{ // Is This Private
                 Text("Private? ").padding()
                 Spacer()
-                Toggle(isOn: $isPrivate){
+                Toggle(isOn: $uploadData.isPrivate){
                     Text("")
                 }
             }
@@ -42,9 +38,9 @@ struct UploadAnimeFaceView: View {
             
             VStack{ // For user to enter a list of tags
                 List{ // A maximum of 3 tags
-                    TextField("First Tag .....", text:$tags[0])
-                    TextField("Second Tag .....", text:$tags[1])
-                    TextField("Thrid Tag .....", text:$tags[2])
+                    TextField("First Tag .....", text:$uploadData.tags[0])
+                    TextField("Second Tag .....", text:$uploadData.tags[1])
+                    TextField("Thrid Tag .....", text:$uploadData.tags[2])
                 }
             }
             
@@ -66,6 +62,6 @@ struct UploadAnimeFaceView: View {
 
 struct UploadAnimeFaceView_Previews: PreviewProvider {
     static var previews: some View {
-        UploadAnimeFaceView()
+        UploadAnimeFaceView(uploadData: AnimeFaceUploadData())
     }
 }
