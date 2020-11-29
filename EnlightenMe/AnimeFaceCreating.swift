@@ -46,7 +46,7 @@ struct AnimeFaceCreating: View {
         }
         .navigationTitle("Anime Face Creator")
         .sheet(isPresented: $showSheet) {
-            UploadAnimeFaceView(uploadData: uploadData, isPresent:$showSheet)
+            UploadAnimeFaceView(uploadData: uploadData)
         }
     }
 }
