@@ -16,7 +16,7 @@ struct UploadAnimeFaceView: View {
         VStack{
             
             HStack{ // Writing title and body
-                WebImage(url:URL(string: getAnimeFaceRequestLink(parms: setupFaceCreatingUrlParms()))).resizable().frame(width:95, height:95)
+                WebImage(url:URL(string: getAnimeFaceRequestLink(parms: uploadData.imageParms))).resizable().frame(width:95, height:95)
                 Spacer()
                 VStack{
                     TextField("Enter a title.....", text:$uploadData.title)
@@ -74,23 +74,21 @@ struct UploadAnimeFaceView: View {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             // handle the result here.
-            guard let unwrapData = String(bytes: data!, encoding: .utf8) else {
-                // When not successs
-                print("Not Success")
-                return
+            if data != nil{
+                guard let unwrapData = String(bytes: data!, encoding: .utf8) else {
+                    // When not successs
+                    return
+                }
+                
+                if "<h1> Success! </h1>" == unwrapData{
+                    // When successs
+                    print("Success")
+                    return
+                }
             }
-            
-            if "<h1> Success! </h1>" == unwrapData{
-                // When successs
-                print("Success")
-                return
-            }
-            
         }.resume()
-
-        print("Not Success")
-
         
+        print("Not Success")
     }
 }
 
