@@ -46,4 +46,14 @@ class AnimeFaceUploadData: ObservableObject, Codable{
         try container.encode(tags, forKey: .tags)
         try container.encode(accountId, forKey: .accountId)
     }
+    
+    func restart(){ // Reseting all paramerters
+        
+        captions = ""
+        title = ""
+        isPrivate = false
+        imageParms = setupFaceCreatingUrlParms()
+        tags = ["", "", ""]
+        accountId = 1 // Change in the future to actual accound Id
+    }
 }
