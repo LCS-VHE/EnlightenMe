@@ -14,14 +14,14 @@ struct AboutProjectLinkData{
 
 class AnimeFaceUploadData: ObservableObject, Codable{
     enum CodingKeys: CodingKey{
-        case captions, title, isPrivate, imageParms, tags
+        case captions, title, isPrivate, imageParms, tags, accountId
     }
     @Published var captions = ""
     @Published var title = ""
     @Published var isPrivate = false
     @Published var imageParms:[Double] = setupFaceCreatingUrlParms()
     @Published var tags:[String] = ["", "", ""]
-    @Published var userName = "Debug User" // Change in the future to actual user Name
+    @Published var accountId = 1 // Change in the future to actual accound Id
     
     init(){}
     
@@ -33,6 +33,7 @@ class AnimeFaceUploadData: ObservableObject, Codable{
         isPrivate = try container.decode(Bool.self, forKey: .isPrivate)
         imageParms = try container.decode([Double].self, forKey: .imageParms)
         tags = try container.decode([String].self, forKey: .tags)
+        accountId = try container.decode(Int.self, forKey: .accountId)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -43,5 +44,6 @@ class AnimeFaceUploadData: ObservableObject, Codable{
         try container.encode(isPrivate, forKey: .isPrivate)
         try container.encode(imageParms, forKey: .imageParms)
         try container.encode(tags, forKey: .tags)
+        try container.encode(accountId, forKey: .accountId)
     }
 }
