@@ -10,11 +10,34 @@ import SDWebImageSwiftUI
 
 struct UploadAnimeFaceView: View {
     @ObservedObject var uploadData:AnimeFaceUploadData
+    @State private var showAlert = false
+    @State private var uploadDataSuccess = true
+    @Binding var isPresent:Bool
     
     
     var body: some View {
         VStack{
-            
+            HStack{// Title and body
+                Button(action:{
+                    self.isPresent = false
+                }){
+                    Text("Back")
+                }.padding()
+                
+                Spacer()
+                Text("Share it to the World")
+                    .font(.headline)
+                    .foregroundColor(Color.gray)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                
+                Spacer()
+                Button(action:{
+                    self.uploadAnimeFace()
+                }){
+                    Text("Upload")
+                }.padding()
+            }
             HStack{ // Writing title and body
                 WebImage(url:URL(string: getAnimeFaceRequestLink(parms: uploadData.imageParms))).resizable().frame(width:95, height:95)
                 Spacer()
@@ -50,12 +73,6 @@ struct UploadAnimeFaceView: View {
             //            }
             
             Spacer() // Pushing the view to the top
-                .navigationBarTitle("New Post")
-                .navigationBarItems(trailing:
-                                        Button("Upload") { // Uploading the anime Face View
-                                            uploadAnimeFace()
-                                        }
-                )
         }
     }
    
@@ -80,20 +97,25 @@ struct UploadAnimeFaceView: View {
                     return
                 }
                 
-                if "<h1> Success! </h1>" == unwrapData{
+                if "Success" == unwrapData{
                     // When successs
-                    print("Success")
+                    
+                    self.uploadDataSuccess = true
+                    isPresent = false
+                    restart_init()
+                    return
+                }else{
+                    // When not successs
+
+                    self.uploadDataSuccess = false
                     return
                 }
             }
         }.resume()
         
-        print("Not Success")
     }
-}
-
-struct UploadAnimeFaceView_Previews: PreviewProvider {
-    static var previews: some View {
-        UploadAnimeFaceView(uploadData: AnimeFaceUploadData())
+    
+    func restart_init(){ // when uploaded it restarts
+        uploadData.restart()
     }
 }

@@ -13,7 +13,7 @@ struct AnimeFaceCreating: View {
     @ObservedObject  var uploadData = AnimeFaceUploadData()
     @State private var num_of_sliders:Double = 0
     @State private var request_url = getAnimeFaceRequestLink(parms: setupFaceCreatingUrlParms())
-    
+    @State private var showSheet = false
     
     var body: some View {
         ScrollView{
@@ -21,7 +21,9 @@ struct AnimeFaceCreating: View {
                 Text("Welcome To Anime Face Creator")
                 Text("Pro tip: double tap to show image")
                 
-                NavigationLink(destination: UploadAnimeFaceView(uploadData: self.uploadData) ){
+                Button(action: {
+                    self.showSheet = true
+                }){
                     Text("Share")
                 }
                 
@@ -43,8 +45,9 @@ struct AnimeFaceCreating: View {
             }
         }
         .navigationTitle("Anime Face Creator")
-        
-        
+        .sheet(isPresented: $showSheet) {
+            UploadAnimeFaceView(uploadData: uploadData, isPresent:$showSheet)
+        }
     }
 }
 
