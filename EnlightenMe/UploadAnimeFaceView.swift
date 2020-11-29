@@ -11,19 +11,12 @@ import SDWebImageSwiftUI
 struct UploadAnimeFaceView: View {
     @ObservedObject var uploadData:AnimeFaceUploadData
     @State private var showAlert = false
-    @State private var uploadDataSuccess = true
-    @Binding var isPresent:Bool
+    @State private var uploadDataSuccess = false
     
     
     var body: some View {
         VStack{
             HStack{// Title and body
-                Button(action:{
-                    self.isPresent = false
-                }){
-                    Text("Back")
-                }.padding()
-                
                 Spacer()
                 Text("Share it to the World")
                     .font(.headline)
@@ -67,15 +60,20 @@ struct UploadAnimeFaceView: View {
                 }
             }
             
-            //            // Showing a list of tags
-            //            VStack{ // For Debugging
-            //                Text("\(tags[0]), \(tags[1]), \(tags[2])")
-            //            }
-            
             Spacer() // Pushing the view to the top
+                
+                .alert(isPresented: $showAlert) {
+                    if uploadDataSuccess{
+                        return Alert(title: Text("Important message"), message: Text("Upload Success"), dismissButton: .default(Text("Got it!")))
+                    } else {
+                        return Alert(title: Text("Important message"), message: Text("Upload Failed"), dismissButton: .default(Text("Got it!")))
+                    }
+                }
         }
     }
-   
+    
+    
+    
     func uploadAnimeFace(){ // Upload Anime Face return if it has succeeded
         // Sending json data to the server
         guard let encodedJson = try? JSONEncoder().encode(uploadData) else { // Encoding json data
@@ -100,14 +98,18 @@ struct UploadAnimeFaceView: View {
                 if "Success" == unwrapData{
                     // When successs
                     
-                    self.uploadDataSuccess = true
-                    isPresent = false
-                    restart_init()
+                    showAlert = true
+                    uploadDataSuccess = true
+                    
+                    uploadData.restart()
                     return
                 }else{
                     // When not successs
-
-                    self.uploadDataSuccess = false
+                    
+                    showAlert = true
+                    uploadDataSuccess = false
+                    
+                    uploadData.restart()
                     return
                 }
             }
