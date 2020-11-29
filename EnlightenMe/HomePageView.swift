@@ -63,7 +63,7 @@ struct HomePageView: View {
                 }
                 
             }
-            .navigationBarTitle("Enlighten Me")
+            .navigationBarTitle("Enlightenment")
         }
     }
 }

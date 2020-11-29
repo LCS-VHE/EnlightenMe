@@ -26,7 +26,6 @@ struct AboutProjectLinkView: View {
                 .multilineTextAlignment(.center)
                 
             
-            Spacer()
         }
     }
 }

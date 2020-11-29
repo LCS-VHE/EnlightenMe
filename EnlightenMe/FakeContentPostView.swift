@@ -25,7 +25,6 @@ struct SimpleConetentPostView: View {
             Image("PostImage-PlaceHolder")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 390, height: 390)
             
             HStack{    // Images at the bottom to make it look good
                 Image("Like").resizable().frame(width:35, height: 35)
