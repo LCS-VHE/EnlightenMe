@@ -36,7 +36,6 @@ struct PostContentView: View {
                 Text("Made With: \(madeWith)") // What it is made out of
                 Spacer()
                     
-                    .navigationBarTitle("Post")
             }
         }
         
