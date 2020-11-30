@@ -21,7 +21,10 @@ struct ProfilePage: View {
                     
                     Group{ // Showing profile picture and Followers
                         HStack{
-                            Image("ProfilePicture-PlaceHolder").resizable().frame(width:100, height: 100).clipShape(Circle()).padding()
+                            VStack{
+                                Image("ProfilePicture-PlaceHolder").resizable().frame(width:75, height: 75).clipShape(Circle()).padding()
+                                Text("\(userName)")
+                            }
                             
                             Spacer()
                             Text("Follower\n\(Followers)")
@@ -33,10 +36,6 @@ struct ProfilePage: View {
                             
                             Text("PlaceHolder\n\(placeHolderValue)")
                                 .multilineTextAlignment(.center)
-                            Spacer()
-                        }
-                        HStack{ // Showing UserName
-                            Text("      \(userName)")
                             Spacer()
                         }
                         
