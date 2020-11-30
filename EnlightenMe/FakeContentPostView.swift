@@ -15,25 +15,31 @@ struct SimpleConetentPostView: View {
     
     var body: some View {
         VStack{ // The Stack of the Image
-            HStack{
-                Image("ProfilePicture Placeholder").resizable().frame(width:45, height:45).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                Text(" \(ProfileName)")
-                Spacer() // Pushing these to the side
+            NavigationLink(destination: OtherPeopleProfileView() ){ // Going into other people page
+                HStack{
+                    Image("ProfilePicture Placeholder").resizable().frame(width:45, height:45).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    Text(" \(ProfileName)")
+                    Spacer() // Pushing these to the side
+                }
             }
             
-            // THe post Image
-            Image("PostImage-PlaceHolder")
-                .resizable()
-                .scaledToFit()
-            
-            HStack{    // Images at the bottom to make it look good
-                Image("Like").resizable().frame(width:35, height: 35)
-                Image("Comment").resizable().frame(width:35, height: 35)
-                Image("Share").resizable().frame(width:35, height: 35)
-                Spacer()
-                
-                Text("Made With \(self.madeWith)")
-                    .multilineTextAlignment(.center)
+            NavigationLink(destination: PostContentView()){
+                // THe post Image
+                VStack{
+                    Image("PostImage-PlaceHolder")
+                        .resizable()
+                        .scaledToFit()
+                    
+                    HStack{    // Images at the bottom to make it look good
+                        Image("Like").resizable().frame(width:35, height: 35)
+                        Image("Comment").resizable().frame(width:35, height: 35)
+                        Image("Share").resizable().frame(width:35, height: 35)
+                        Spacer()
+                        
+                        Text("Made With \(self.madeWith)")
+                            .multilineTextAlignment(.center)
+                    }
+                }
                 
             }
         }
