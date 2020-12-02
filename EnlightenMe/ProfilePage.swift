@@ -13,6 +13,7 @@ struct ProfilePage: View {
     private var Followers = 68
     private var placeHolderValue = 68
     private var profilePicture = "ProfilePicture-PlaceHolder"
+    private var accountId = 1 // The Most important part of it
     
     var body: some View {
         NavigationView{
@@ -52,8 +53,30 @@ struct ProfilePage: View {
                 }
                 
                 .navigationBarTitle("My Profile")
-            }
+            }.onAppear(perform: get_users_posts)
         }
+    }
+    
+    func get_users_posts(){ // Get users posts
+        print("\(Constants().domain)/api/get-posts-from-user/\(self.accountId)")
+        guard let  url = URL(string: "\(Constants().domain)/api/get-posts-from-user/\(self.accountId)") else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data{
+                print("Hello")
+                if let posts = try? JSONDecoder().decode(AllContentPostViewData.self, from: data){ // Data model, data input
+                    
+                    print(posts)
+                }
+            }
+            print("Hello")
+        }.resume()
+    }
+    
+    func get_about_profile(){ // Get about profile post
+        
     }
 }
 
