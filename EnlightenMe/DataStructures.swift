@@ -57,3 +57,18 @@ class AnimeFaceUploadData: ObservableObject, Codable{
         accountId = 1 // Change in the future to actual accound Id
     }
 }
+
+struct AllContentPostViewData : Codable{
+    var Posts:[ContentPostViewData]
+}
+
+struct ContentPostViewData : Codable{
+    var postId:Int
+    var accountId:Int
+    var timestamp:Int
+    var madeWith:String
+    var post_image_url:String
+    var title:String
+    var likes:String
+    var isPrivate:Int
+}
