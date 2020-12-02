@@ -16,10 +16,6 @@ struct HomePageView: View {
         NavigationView{
             VStack{
                 ScrollView{
-                    //                    Text("Enlighten Me")
-                    //                        .font(.largeTitle)
-                    //                        .fontWeight(.ultraLight)
-                    //                        .foregroundColor(Color.gray)
                     
                     Group{ // The group for the Enlighten Me
                         HStack{
