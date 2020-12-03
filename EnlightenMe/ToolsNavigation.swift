@@ -25,7 +25,7 @@ struct ToolsNavigation: View {
                             }
                         }
                         
-                        NavigationLink(destination: Text("Place Holder")){ // Neural Style Transfere
+                        NavigationLink(destination: StyleTransfereUtilityView()){ // Neural Style Transfere
                             
                             HStack{ // Showing image in A List
                                 Text("Neural Style Transfere")
