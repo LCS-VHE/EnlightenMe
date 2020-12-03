@@ -69,6 +69,7 @@ struct ContentPostViewData : Codable{
     var madeWith:String
     var post_image_url:String
     var title:String
-    var likes:String
+    var Captions:String
+    var likes:Int
     var isPrivate:Int
 }
