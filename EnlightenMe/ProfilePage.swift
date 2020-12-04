@@ -13,6 +13,10 @@ struct ProfilePage: View {
     private var profilePicture = "ProfilePicture-PlaceHolder"
     private var followers = Int.random(in: 200...2000)
     private var accountId = 1 // The Most important part of it
+    @State private var userposts:AllContentPostViewData!
+    
+    @State private var sortedImagesURL = [[String]]() // For the square box post view
+    @State private var sortedData = [[ContentPostViewData]]()
     
     var body: some View {
         NavigationView{
@@ -57,8 +61,8 @@ struct ProfilePage: View {
                     }
                     Divider() // A line diving stuff
                     Group{ // A list of posts
-                        ForEach(0..<10){ num in
-                            SquareBoxPostView()
+                        ForEach(0..<sortedImagesURL.count, id: \.self){ num in
+                            SquareBoxPostView(imageurl: sortedImagesURL[num], data: sortedData[num])
                             
                         }
                     }
@@ -83,7 +87,9 @@ struct ProfilePage: View {
             if let data = data{
                 if let posts = try? JSONDecoder().decode(AllContentPostViewData.self, from: data){ // Data model, data input
                     
-                    print(posts)
+                    self.userposts = posts
+                    self.sortedImagesURL = seperate_image_urls(data: userposts)
+                    self.sortedData = seperate_data_from_data(data: self.userposts)
                 }
             }
             print("Hello")

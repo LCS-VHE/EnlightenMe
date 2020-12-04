@@ -14,6 +14,7 @@ struct StyleTransfereUtilityView: View {
             VStack{
                 Group{
                     HStack{ // style image and image
+                        Spacer()
                         VStack{
                             Text("Image")
                             Button(action:{
@@ -39,10 +40,11 @@ struct StyleTransfereUtilityView: View {
                                 .scaledToFit()
                         }
                     }
+                    Spacer()
                 }
                 
                 Group{
-                    Button(action: {
+                    Button(action: { // Upload Image and wait for a while
                         
                     }){
                         Text("Show Output ")
