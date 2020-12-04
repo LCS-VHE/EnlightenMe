@@ -10,9 +10,8 @@ import SwiftUI
 struct ProfilePage: View {
     private var userName = "Test_User"
     private var posts = 0
-    private var Followers = 68
-    private var placeHolderValue = 68
     private var profilePicture = "ProfilePicture-PlaceHolder"
+    private var followers = Int.random(in: 200...2000)
     private var accountId = 1 // The Most important part of it
     
     var body: some View {
@@ -28,15 +27,30 @@ struct ProfilePage: View {
                             }
                             
                             Spacer()
-                            Text("Follower\n\(Followers)")
-                                .multilineTextAlignment(.center)
-                            Spacer()
-                            Text("Posts\n\(posts)")
-                                .multilineTextAlignment(.center)
+                            VStack{
+                                Text("Posts")
+                                    .multilineTextAlignment(.center)
+                                Text("\(posts)")
+                                    .multilineTextAlignment(.center)
+                            }
                             Spacer()
                             
-                            Text("PlaceHolder\n\(placeHolderValue)")
-                                .multilineTextAlignment(.center)
+                            VStack{
+                                Text("Follower")
+                                    .multilineTextAlignment(.center)
+                                Text("\(followers)")
+                                    .multilineTextAlignment(.center)
+                            }
+                            
+                            Spacer()
+                            
+                            VStack{
+                                Text("Following")
+                                    .multilineTextAlignment(.center)
+                                Text("\(followers + 10)")
+                                    .multilineTextAlignment(.center)
+                            }
+                            
                             Spacer()
                         }
                         
@@ -58,14 +72,15 @@ struct ProfilePage: View {
     }
     
     func get_users_posts(){ // Get users posts
-        print("\(Constants().domain)/api/get-posts-from-user/\(self.accountId)")
-        guard let  url = URL(string: "\(Constants().domain)/api/get-posts-from-user/\(self.accountId)") else {
+        guard let  url = URL(string: "\(Constants().domain)/api/get-own-post/\(self.accountId)") else {
             return
         }
         
+        
+        print("\(Constants().domain)/api/get-own-post/\(self.accountId)")
         URLSession.shared.dataTask(with: url) { data, response, error in
+            print("Hello")
             if let data = data{
-                print("Hello")
                 if let posts = try? JSONDecoder().decode(AllContentPostViewData.self, from: data){ // Data model, data input
                     
                     print(posts)
