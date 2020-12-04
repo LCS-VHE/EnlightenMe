@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SquareBoxPostView: View {
-    private var imagesName = ["AboutProjectLinkView-Placeholder", "AboutProjectLinkView-Placeholder", "AboutProjectLinkView-Placeholder"]
+    // It will take in two object one for the view the next for the next view
+    @State  var imageurl = [String]() // Optionals to prevent crashing
+    @State  var data = [ContentPostViewData]() // Optionals to prevent crashing
+    
+    
     var body: some View {
         HStack{
-            ForEach(0..<imagesName.count){ num in
+            ForEach(0..<imageurl.count){ num in
                 NavigationLink(destination: Text("Place Holder \(num)")){
-                    Image(imagesName[num]).resizable().scaledToFit()
+                    WebImage(url: URL(string:imageurl[num])).resizable().scaledToFit()
                 }
             }
         }
