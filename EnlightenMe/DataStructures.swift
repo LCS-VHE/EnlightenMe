@@ -73,3 +73,7 @@ struct ContentPostViewData : Codable{
     var likes:Int
     var isPrivate:Int
 }
+
+enum ActiveSheet { // For Showing sheets in the style transfere view
+   case first, second
+}
