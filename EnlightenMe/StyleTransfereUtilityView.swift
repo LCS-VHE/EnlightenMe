@@ -12,6 +12,8 @@ import SDWebImageSwiftUI
 
 struct StyleTransfereUtilityView: View {
     @State private var uploadImage = UIImage(named: "Output-Image-NeuralStyleTransfere")
+    @State private var styleImage = UIImage(named: "Original-Style-Image")
+    @State private var orginialImage = UIImage(named : "Original-Image-StyleTransfere")
     
     var body: some View {
         ScrollView{
@@ -22,12 +24,15 @@ struct StyleTransfereUtilityView: View {
                         VStack{
                             Text("Image")
                             Button(action:{
-                                // Do something
+                                // grab image from photo
+                                
                             }){
                                 Text("Upload Image")
+                                    .multilineTextAlignment(.center)
+
                             }
                             
-                            Image("Original-Image-StyleTransfere")
+                            Image(uiImage: orginialImage!)
                                 .resizable()
                                 .scaledToFit()
                         }
@@ -38,8 +43,9 @@ struct StyleTransfereUtilityView: View {
                                 // Upload style image
                             }){
                                 Text("Upload Style Image")
+                                    .multilineTextAlignment(.center)
                             }
-                            Image("Original-Style-Image")
+                            Image(uiImage: styleImage!)
                                 .resizable()
                                 .scaledToFit()
                         }
@@ -49,7 +55,7 @@ struct StyleTransfereUtilityView: View {
                 
                 Group{
                     Button(action: { // Upload Image and wait for a while
-                        upload_image() // Upload image to database
+                        upload_image_to_endpoint() // Upload image to database
                     }){
                         Text("Show Output ")
                     }
@@ -65,7 +71,7 @@ struct StyleTransfereUtilityView: View {
         }
     }
         
-    func upload_image(){ // Upload Image to database
+    func upload_image_to_endpoint(){ // Upload Image to database
         guard let image = self.uploadImage else {
             return
 
@@ -122,7 +128,7 @@ struct StyleTransfereUtilityView: View {
                 print("\(error!.localizedDescription)")
             }
             
-            guard let responseData = responseData else {
+            guard let  responseData  = responseData else {
                 print("no response data")
                 return
             }
@@ -134,7 +140,7 @@ struct StyleTransfereUtilityView: View {
         
 
     }
-    
+
 }
 
 struct StyleTransfereUtilityView_Previews: PreviewProvider {
