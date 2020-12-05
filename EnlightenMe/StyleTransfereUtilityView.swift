@@ -14,6 +14,9 @@ struct StyleTransfereUtilityView: View {
     @State private var uploadImage = UIImage(named: "Output-Image-NeuralStyleTransfere")
     @State private var styleImage = UIImage(named: "Original-Style-Image")
     @State private var orginialImage = UIImage(named : "Original-Image-StyleTransfere")
+    @State private var showSheet = false
+    @State private var activeSheet: ActiveSheet = .second
+
     
     var body: some View {
         ScrollView{
@@ -25,7 +28,8 @@ struct StyleTransfereUtilityView: View {
                             Text("Image")
                             Button(action:{
                                 // grab image from photo
-                                
+                                self.activeSheet = .second // Second is orginial image
+                                self.showSheet = true
                             }){
                                 Text("Upload Image")
                                     .multilineTextAlignment(.center)
@@ -41,6 +45,9 @@ struct StyleTransfereUtilityView: View {
                             Text("Style Image")
                             Button(action:{
                                 // Upload style image
+                                self.activeSheet = .first // First is style image
+                                self.showSheet = true
+
                             }){
                                 Text("Upload Style Image")
                                     .multilineTextAlignment(.center)
@@ -67,7 +74,14 @@ struct StyleTransfereUtilityView: View {
                 Spacer()
                     .navigationBarTitle("Neural Style Transfere")
             }
-            
+            .sheet(isPresented: $showSheet){ // load style imag
+                if self.activeSheet == .first{ // Select Style Imag
+                    ImagePicker(image: self.$styleImage)
+                
+                }else if self.activeSheet == .second{ // Select Orginial Image
+                    ImagePicker(image: self.$orginialImage)
+                }
+            }
         }
     }
         
@@ -140,7 +154,9 @@ struct StyleTransfereUtilityView: View {
         
 
     }
-
+    func voidFunctionPlaceHolder(){
+        
+    }
 }
 
 struct StyleTransfereUtilityView_Previews: PreviewProvider {
