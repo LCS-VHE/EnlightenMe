@@ -12,6 +12,15 @@ struct AboutProjectLinkData{
     var imageName: String
 }
 
+struct styleTransferData: Codable {
+    var captions:String = ""
+    var title:String = ""
+    var isPrivate:Bool = false
+    var tags:[String] = ["", "", ""]
+    var imageLink:String = ""
+    var accountId = 1 // Chang in the future
+}
+
 class AnimeFaceUploadData: ObservableObject, Codable{
     enum CodingKeys: CodingKey{
         case captions, title, isPrivate, imageParms, tags, accountId
@@ -75,5 +84,5 @@ struct ContentPostViewData : Codable{
 }
 
 enum ActiveSheet { // For Showing sheets in the style transfere view
-   case first, second
+   case first, second, thrid
 }
