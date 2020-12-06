@@ -106,7 +106,7 @@ struct StyleTransfereUtilityView: View {
         let session = URLSession(configuration: config)
 
         // Set the URLRequest to POST and to the specified URL
-        var urlRequest = URLRequest(url: URL(string: "\(Constants().domain)/upload-image")!)
+        var urlRequest = URLRequest(url: URL(string: "\(Constants().domain)/neural-style-transfere")!)
         urlRequest.httpMethod = "POST"
 
         // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
@@ -127,9 +127,15 @@ struct StyleTransfereUtilityView: View {
 
         // Add the image data to the raw http request data
         data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-        data.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"style-image\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
         data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
-        data.append(image.jpegData(compressionQuality: 1)!)
+        data.append(styleImage!.jpegData(compressionQuality: 1)!)
+        
+        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"original-image\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
+        data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+        data.append(orginialImage!.jpegData(compressionQuality: 1)!)
+
 
         // End the raw http request data, note that there is 2 extra dash ("-") at the end, this is to indicate the end of the data
         // According to the HTTP 1.1 specification https://tools.ietf.org/html/rfc7230
