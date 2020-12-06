@@ -16,11 +16,20 @@ struct StyleTransfereUtilityView: View {
     @State private var orginialImage = UIImage(named : "Original-Image-StyleTransfere")
     @State private var showSheet = false
     @State private var activeSheet: ActiveSheet = .second
+    @State private var outputImageUrl:String = "\(Constants().domain)/file/image/1607221721.313063.jpeg" // Default Image
 
     
     var body: some View {
         ScrollView{
             VStack{
+                HStack{
+                    Spacer()
+                    Button("Share"){
+                        activeSheet = .thrid
+                        showSheet = true
+                    }
+                    Spacer()
+                }
                 Group{
                     HStack{ // style image and image
                         Spacer()
@@ -67,7 +76,7 @@ struct StyleTransfereUtilityView: View {
                         Text("Show Output ")
                     }
                     Text("Output Image")
-                    Image(uiImage: self.uploadImage!)
+                    WebImage(url:URL(string:outputImageUrl))
                         .resizable()
                         .scaledToFit()
                 }
@@ -80,6 +89,9 @@ struct StyleTransfereUtilityView: View {
                 
                 }else if self.activeSheet == .second{ // Select Orginial Image
                     ImagePicker(image: self.$orginialImage)
+                
+                }else if self.activeSheet == .thrid{ // Sharing Image View
+                    StyleTransferShareView()
                 }
             }
         }
@@ -154,7 +166,7 @@ struct StyleTransfereUtilityView: View {
             }
             
             if let responseString = String(data: responseData, encoding: .utf8) {
-                print("uploaded to: \(responseString)")
+                outputImageUrl = responseString
             }
         }).resume()
         

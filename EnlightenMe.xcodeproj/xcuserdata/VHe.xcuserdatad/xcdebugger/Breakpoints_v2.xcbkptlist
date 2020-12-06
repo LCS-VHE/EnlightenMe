@@ -371,5 +371,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A5CDF69-F185-4F9D-BED6-D81B240B995D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EnlightenMe/StyleTransfereUtilityView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "StyleTransfereUtilityView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "3A5CDF69-F185-4F9D-BED6-D81B240B995D - f3282ba5c6eefa19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of EnlightenMe.StyleTransfereUtilityView.(uploadImage in _69D27070B4CD05D8363ADDE7343E824E) : Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "EnlightenMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/VHe/Documents/School%20Stuffs/Computer%20Science/EnlightenMe/EnlightenMe/StyleTransfereUtilityView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "3A5CDF69-F185-4F9D-BED6-D81B240B995D - 7358ef3fe5c09815"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EnlightenMe.StyleTransfereUtilityView.init() -&gt; EnlightenMe.StyleTransfereUtilityView"
+                  moduleName = "EnlightenMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/VHe/Documents/School%20Stuffs/Computer%20Science/EnlightenMe/EnlightenMe/StyleTransfereUtilityView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "62">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
