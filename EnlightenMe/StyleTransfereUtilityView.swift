@@ -91,7 +91,7 @@ struct StyleTransfereUtilityView: View {
                     ImagePicker(image: self.$orginialImage)
                 
                 }else if self.activeSheet == .thrid{ // Sharing Image View
-                    StyleTransferShareView()
+                    StyleTransferShareView(uploadData: styleTransferData(imageLink: self.outputImageUrl)) // passing data through screen
                 }
             }
         }
