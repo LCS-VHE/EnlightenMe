@@ -9,35 +9,64 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct PostContentView: View {
-    @State var data:ContentPostViewData = ContentPostViewData(postId: 1, accountId: 1, timestamp: 1, madeWith: "Neural Style Transfer", post_image_url: "https://asdf.com", title: "A Cool image that I've made", Captions: "A Cool image that I've made", likes: 0, isPrivate: 0) // Default values for the data variable
-    
+    @State var data = ContentPostViewData(postId: 1, accountId: 1, timestamp: 1, madeWith: "Neural Style Transfer", post_image_url: "http://127.0.0.1:5000/file/image/1607225993.5122628.jpeg", title: "A Cool image that I've made", Captions: "A Cool image that I've made", likes: 0, isPrivate: 0) // Default values for the data variable
+    var profileimage = "ProfilePicture Placeholder"
+    @State private var showMore = false
     
     var body: some View {
-        ScrollView{
-            VStack{
-                HStack{ // Profile Image and UserName
-//                    NavigationLink( destination: OtherPeopleProfileView() ){
-//                        Image(profileimage) // Change in the future
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width:50, height:50)
-//                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-//                            .padding()
-//                        Text(data.accountId)
-//                    }
+        VStack{
+            HStack{ // Profile Image and UserName
+                NavigationLink(destination: OtherPeopleProfileView()){
+                    Image(profileimage)
+                        .resizable()
+                        .frame(width:50, height:50)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     
-                    Spacer()
+                    Text("\(data.accountId)")
                 }
                 
-                WebImage(url: URL(string: data.post_image_url))
-                    .resizable()
-                    .scaledToFit() // The Image
-                Text("\(data.Captions)") // The Text
-                Text("Made With: \(data.madeWith)") // What it is made out of
+                
                 Spacer()
+            }
+            
+            WebImage(url: URL(string: data.post_image_url))
+                .resizable()
+                .scaledToFit() // The Image
+            HStack{ // A list of buttons
+                Button(action: {
                     
+                }){
+                    Text("Image One")
+                }
+                
+                Button(action: {
+                    
+                }){
+                    Text("Image Two")
+                }
+                
+                Button("Show More"){
+                    // Do Show More Data
+                    self.showMore = true // Showing more elements
+                }.disabled(self.showMore)
+            }
+            VStack{
+                Text("\(data.title)")
+                    .font(.headline)
+                    .fontWeight(.thin)
+                    .multilineTextAlignment(.center)
+                   
+                
+                if showMore{
+                    Text("\(data.Captions)")// The Text
+                        .font(.footnote)
+                        .fontWeight(.ultraLight)
+                    Text("Made With: \(data.madeWith)")
+                    
+                }
             }
         }
+        
         
     }
 }
