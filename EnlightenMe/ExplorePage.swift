@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ExplorePage: View {        
-    @State private var trendingPost:AllContentPostViewData!
-    @State private var otherPost:AllContentPostViewData!
+    @State private var allPost:TrendingData?
     
     @State private var sortedTrendingData = [[ContentPostViewData]]() // Post content view Data
     @State private var sortedTrendingImageURL = [[String]]()
@@ -28,9 +27,9 @@ struct ExplorePage: View {
                     }
                     
                     Group{ // Trending
-                        ForEach(0..<2){ num in
+                        ForEach(0..<sortedTrendingData.count, id: \.self){ num in
                             HStack{
-                                SquareBoxPostView()
+                                SquareBoxPostView(imageurl: sortedTrendingImageURL[num], data: sortedTrendingData[num])
                             }
                         }
                     }
@@ -56,24 +55,25 @@ struct ExplorePage: View {
         }.onAppear(perform: grab_data)
     }
     
-    func grab_data(){ // Getting the trending data and other data
-        guard let url = URL(string: "\(Constants().domain)/api/get-recent-posts") else {
+    func grab_data(){
+        guard let url = URL(string: "\(Constants().domain)/api/explore-page") else {
             return // Can't convert string to url
         }
-        
+        print(url.absoluteURL)
         URLSession.shared.dataTask(with: url) { data, response, error in // Getting data to other posts
-            print("Hello")
             if let data = data{
-                if let posts = try? JSONDecoder().decode(AllContentPostViewData.self, from: data){ // Data model, data input
-                    self.otherPost = posts
-                    self.sortedOtherImageURL = seperate_image_urls(data: otherPost)
-                    self.sortedOtherPostData = seperate_data_from_data(data: otherPost)
+                if let posts = try? JSONDecoder().decode(TrendingData.self, from: data){ // Data model, data input
                     
+                    allPost = posts
+                    print(posts)
+                    self.sortedTrendingImageURL = seperate_image_urls(data: self.allPost!.Trending)
+                    self.sortedTrendingData = seperate_data_from_data(data: self.allPost!.Trending)
+                    
+                    self.sortedOtherPostData = seperate_data_from_data(data: self.allPost!.Others)
+                    self.sortedOtherImageURL = seperate_image_urls(data: self.allPost!.Others)
                 }
             }
-            print("Hello")
         }.resume()
-    
     }
 }
 
