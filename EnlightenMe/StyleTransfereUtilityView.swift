@@ -81,7 +81,7 @@ struct StyleTransfereUtilityView: View {
                         .scaledToFit()
                 }
                 Spacer()
-                    .navigationBarTitle("Neural Style Transfere")
+                    .navigationBarTitle("Style Transfere")
             }
             .sheet(isPresented: $showSheet){ // load style imag
                 if self.activeSheet == .first{ // Select Style Imag
