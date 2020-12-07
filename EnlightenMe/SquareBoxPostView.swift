@@ -17,7 +17,7 @@ struct SquareBoxPostView: View {
     var body: some View {
         HStack{
             ForEach(0..<imageurl.count){ num in
-                NavigationLink(destination: Text("Place Holder \(num)")){
+                NavigationLink(destination: PostContentView(data: data[num])){
                     WebImage(url: URL(string:imageurl[num])).resizable().scaledToFit()
                 }
             }
