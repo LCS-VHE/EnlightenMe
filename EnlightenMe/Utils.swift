@@ -55,9 +55,31 @@ func seperate_image_urls(data:AllContentPostViewData) -> [[String]]{
     return results
 }
 
+func seperate_image_urls(data:[ContentPostViewData]) -> [[String]]{
+    var results = [[String]]()
+    let contentData = data
+    
+    for index in 0..<contentData.count/3{
+        results.append([contentData[index*3].post_image_url, contentData[index*3 + 1].post_image_url, contentData[index*3 + 2].post_image_url])
+    }
+    
+    return results
+}
+
 func seperate_data_from_data(data: AllContentPostViewData) -> [[ContentPostViewData]]{
     var results = [[ContentPostViewData]]()
     let contentData = data.Posts
+    
+    for index in 0..<contentData.count/3{
+        results.append([contentData[index * 3], contentData[index*3 + 1], contentData[index*3 + 2]])
+    }
+    
+    return results
+}
+
+func seperate_data_from_data(data: [ContentPostViewData]) -> [[ContentPostViewData]]{
+    var results = [[ContentPostViewData]]()
+    let contentData = data
     
     for index in 0..<contentData.count/3{
         results.append([contentData[index * 3], contentData[index*3 + 1], contentData[index*3 + 2]])
