@@ -71,6 +71,11 @@ struct AllContentPostViewData : Codable{
     var Posts:[ContentPostViewData]
 }
 
+struct TrendingData : Codable{
+    var Trending:[ContentPostViewData]
+    var Others:[ContentPostViewData]
+}
+
 struct ContentPostViewData : Codable{
     var postId:Int
     var accountId:Int
