@@ -30,15 +30,6 @@ struct SimpleConetentPostView: View {
                         .resizable()
                         .scaledToFit()
                     
-                    HStack{    // Images at the bottom to make it look good
-                        Image("Like").resizable().frame(width:35, height: 35)
-                        Image("Comment").resizable().frame(width:35, height: 35)
-                        Image("Share").resizable().frame(width:35, height: 35)
-                        Spacer()
-                        
-                        Text("Made With \(self.madeWith)")
-                            .multilineTextAlignment(.center)
-                    }
                 }
                 
             }
