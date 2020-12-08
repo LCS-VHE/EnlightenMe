@@ -91,9 +91,17 @@ struct StyleTransferShareView: View {
                     // When not successs
                     return
                 }
+                
+                showAlert = true
+                uploadDataSuccess = true
                 print(unwrapData)
+                return
             }
         }.resume()
+        
+        showAlert = true
+        uploadDataSuccess = false
+        return
         
     }
 }
