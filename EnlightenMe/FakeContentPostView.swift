@@ -27,7 +27,7 @@ struct SimpleConetentPostView: View {
                     }
                 }
                 
-                NavigationLink(destination: PostContentView()){
+                NavigationLink(destination: PostContentView(data: data[num])){
                     // THe post Image
                     VStack{
                         WebImage(url: URL(string: imageURL[num]))
