@@ -20,7 +20,7 @@ struct ToolsNavigation: View {
                         NavigationLink(destination: StyleTransfereUtilityView()){ // Neural Style Transfere
                             
                             HStack{ // Showing image in A List
-                                Text("Neural Style Transfere")
+                                Text("Neural Style Transfer")
                                 Spacer()
                                 Image("PostImage-PlaceHolder").resizable().frame(width:50, height: 50) // Place holder Image
                             }
