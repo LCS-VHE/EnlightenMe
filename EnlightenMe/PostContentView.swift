@@ -12,7 +12,7 @@ struct PostContentView: View {
     @State var data = ContentPostViewData(postId: 1, accountId: 1, timestamp: 1, madeWith: "Neural Style Transfer", post_image_url: "http://127.0.0.1:5000/file/image/1607225993.5122628.jpeg", title: "A Cool image that I've made", Captions: "A Cool image that I've made", likes: 0, isPrivate: 0) // Default values for the data variable
     var profileimage = "ProfilePicture Placeholder"
     @State private var showMore = false
-    @State private var userName = "1"
+    @State private var userName = "Mr.Random"
     
     var body: some View {
         VStack{
@@ -34,22 +34,12 @@ struct PostContentView: View {
                 .resizable()
                 .scaledToFit() // The Image
             HStack{ // A list of buttons
-                Button(action: {
-                    
-                }){
-                    Text("Image One")
-                }
-                
-                Button(action: {
-                    
-                }){
-                    Text("Image Two")
-                }
-                
+                Spacer()
                 Button("Show More"){
                     // Do Show More Data
                     self.showMore = true // Showing more elements
                 }.disabled(self.showMore)
+                Spacer()
             }
             VStack{
                 Text("\(data.title)")
