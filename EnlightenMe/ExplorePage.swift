@@ -39,9 +39,9 @@ struct ExplorePage: View {
                     HStack{ // Other Post
                         Text("Other Posts")
                         Spacer()
-                        Button("Udate Posts"){
-                            self.grab_data() // Updating stuff
-                        }
+//                        Button("Udate Posts"){
+//                            self.grab_data() // Updating stuff
+//                        }
                     }
                     Spacer()
                     

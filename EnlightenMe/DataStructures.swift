@@ -57,13 +57,14 @@ class AnimeFaceUploadData: ObservableObject, Codable{
     }
     
     func restart(){ // Reseting all paramerters
-        
-        captions = ""
-        title = ""
-        isPrivate = false
-        imageParms = setupFaceCreatingUrlParms()
-        tags = ["", "", ""]
-        accountId = 1 // Change in the future to actual accound Id
+        DispatchQueue.main.async {
+            self.captions = ""
+            self.title = ""
+            self.isPrivate = false
+            self.imageParms = setupFaceCreatingUrlParms()
+            self.tags = ["", "", ""]
+            self.accountId = 1 // Change in the future to actual accound Id
+        }
     }
 }
 

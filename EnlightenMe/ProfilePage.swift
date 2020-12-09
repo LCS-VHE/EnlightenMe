@@ -22,7 +22,6 @@ struct ProfilePage: View {
         NavigationView{
             ScrollView{
                 VStack{
-                    
                     Group{ // Showing profile picture and Followers
                         HStack{
                             VStack{
@@ -81,7 +80,6 @@ struct ProfilePage: View {
         }
         
         
-        print("\(Constants().domain)/api/get-own-post/\(self.accountId)")
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data{
                 if let posts = try? JSONDecoder().decode(AllContentPostViewData.self, from: data){ // Data model, data input
@@ -89,6 +87,7 @@ struct ProfilePage: View {
                     self.userposts = posts
                     self.sortedImagesURL = seperate_image_urls(data: userposts)
                     self.sortedData = seperate_data_from_data(data: self.userposts)
+                    print(sortedImagesURL)
                     return // Success
                 }
             }
