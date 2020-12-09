@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfilePage: View {
-    private var userName = "Test_User"
+    private var userName = "Mr.Random"
     private var posts = 0
     private var profilePicture = "ProfilePicture-PlaceHolder"
     private var followers = Int.random(in: 200...2000)
