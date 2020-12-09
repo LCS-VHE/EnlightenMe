@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomePageView: View {
     @State private var aboutProjectLinkInfo:[AboutProjectLinkData] = getAboutProjectLinkData() // Data for the about project link view
-    private var domain:String = Constants().domain // The domain of the api
+    
+    // Variables for getting data from website
+    @State private var posts:AllContentPostViewData?
+    @State private var sortedPost:[[ContentPostViewData]] = [[ContentPostViewData]] ()
+    @State private var sortedImageURL:[[String]] = [[String]]()
     
     
     var body: some View {
@@ -35,7 +39,28 @@ struct HomePageView: View {
                 
             }
             .navigationBarTitle("Enlightenment")
+        }.onAppear(perform: getPosts)
+    }
+    
+    func getPosts(){ // Getting some posts
+        guard let url = URL(string: "\(Constants().domain)/api/get-recent-posts") else {
+            return // Not working
         }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in // Getting data to other posts
+            if let data = data{
+                if let posts = try? JSONDecoder().decode(AllContentPostViewData.self, from: data){ // Data model, data input
+                    
+                    self.posts = posts
+                    self.sortedImageURL = seperate_image_urls(data: self.posts!.Posts)
+                    self.sortedPost = seperate_data_from_data(data: self.posts!.Posts)
+                    
+                    print(self.posts)
+                    return
+                }
+            }
+        }.resume()
+        
     }
 }
 
