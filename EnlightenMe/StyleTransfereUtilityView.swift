@@ -15,7 +15,7 @@ struct StyleTransfereUtilityView: View {
     @State private var styleImage = UIImage(named: "Original-Style-Image")
     @State private var orginialImage = UIImage(named : "Original-Image-StyleTransfere")
     @State private var showSheet = false
-    @State private var activeSheet: ActiveSheet = .second
+    @State private var activeSheet: ActiveSheet = .first
     @State private var outputImageUrl:String = "\(Constants().domain)/file/image/1607221721.313063.jpeg" // Default Image
     
     
@@ -84,18 +84,18 @@ struct StyleTransfereUtilityView: View {
                         .scaledToFit()
                 }
                 Spacer()
-                    .navigationBarTitle("Style Transfere")
+                    .navigationBarTitle("Style Transfer")
             }
-            .sheet(isPresented: $showSheet){ // load style imag
-                if self.activeSheet == .first{ // Select Style Imag
-                    ImagePicker(image: self.$styleImage)
-                    
-                }else if self.activeSheet == .second{ // Select Orginial Image
-                    ImagePicker(image: self.$orginialImage)
-                    
-                }else{ // Sharing Image View
-                    StyleTransferShareView(uploadData: styleTransferData(imageLink: self.outputImageUrl)) // passing data through screen
-                }
+        }
+        .sheet(isPresented: $showSheet){ // load style imag
+            if self.activeSheet == .first{ // Select Style Imag
+                ImagePicker(image: self.$styleImage)
+                
+            }else if self.activeSheet == .second{ // Select Orginial Image
+                ImagePicker(image: self.$orginialImage)
+                
+            }else{ // Sharing Image View
+                StyleTransferShareView(uploadData: styleTransferData(imageLink: self.outputImageUrl)) // passing data through screen
             }
         }
     }
