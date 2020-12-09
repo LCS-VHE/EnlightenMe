@@ -57,9 +57,7 @@ struct HomePageView: View {
                         self.sortedImageURL = seperate_image_urls(data: self.posts!.Posts)
                         self.sortedPost = seperate_data_from_data(data: self.posts!.Posts)
 
-                    }
-                    
-                    print(self.posts)
+                    }                    
                     return
                 }
             }

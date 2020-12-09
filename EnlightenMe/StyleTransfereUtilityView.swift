@@ -101,10 +101,6 @@ struct StyleTransfereUtilityView: View {
     }
     
     func upload_image_to_endpoint(){ // Upload Image to database
-        guard let image = self.uploadImage else {
-            return
-            
-        }
         
         let filename = "avatar.png"
         
