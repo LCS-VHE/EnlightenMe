@@ -14,19 +14,25 @@ struct StyleTransfereUtilityView: View {
     @State private var uploadImage = UIImage(named: "Output-Image-NeuralStyleTransfere")
     @State private var styleImage = UIImage(named: "Original-Style-Image")
     @State private var orginialImage = UIImage(named : "Original-Image-StyleTransfere")
-    @State private var showSheet = false
-    @State private var activeSheet: ActiveSheet = .first
     @State private var outputImageUrl:String = "\(Constants().domain)/file/image/1607221721.313063.jpeg" // Default Image
     
+    //Variables for controlling sheets
+    @State private var pickStyleImage = false
+    @State private var pickOriginalImage = false
+    @State private var share = false
     
     var body: some View {
         ScrollView{
             VStack{
                 HStack{
                     Button("Share"){
-                        activeSheet = .thrid
-                        showSheet = true
+                        // Share Image
+                        share = true
+                        
                     }.padding()
+                    .sheet(isPresented: $share, content: {
+                        StyleTransferShareView(uploadData: styleTransferData(imageLink: self.outputImageUrl))
+                    })
                     
                     Spacer()
                     Link(destination: URL(string:self.outputImageUrl)!) {
@@ -40,13 +46,16 @@ struct StyleTransfereUtilityView: View {
                             Text("Image")
                             Button(action:{
                                 // grab image from photo
-                                self.activeSheet = .second // Second is orginial image
-                                self.showSheet = true
+                                pickOriginalImage = true
                             }){
                                 Text("Upload Image")
                                     .multilineTextAlignment(.center)
                                 
                             }
+                            .sheet(isPresented:$pickOriginalImage , content: {
+                                ImagePicker(image: $orginialImage)
+                            })
+                            
                             
                             Image(uiImage: orginialImage!)
                                 .resizable()
@@ -57,13 +66,15 @@ struct StyleTransfereUtilityView: View {
                             Text("Style Image")
                             Button(action:{
                                 // Upload style image
-                                self.activeSheet = .first // First is style image
-                                self.showSheet = true
+                                pickStyleImage = true
                                 
                             }){
                                 Text("Upload Style Image")
                                     .multilineTextAlignment(.center)
                             }
+                            .sheet(isPresented: $pickStyleImage, content: {
+                                ImagePicker(image: $styleImage)
+                            })
                             Image(uiImage: styleImage!)
                                 .resizable()
                                 .scaledToFit()
@@ -85,17 +96,6 @@ struct StyleTransfereUtilityView: View {
                 }
                 Spacer()
                     .navigationBarTitle("Style Transfer")
-            }
-        }
-        .sheet(isPresented: $showSheet){ // load style imag
-            if self.activeSheet == .first{ // Select Style Imag
-                ImagePicker(image: self.$styleImage)
-                
-            }else if self.activeSheet == .second{ // Select Orginial Image
-                ImagePicker(image: self.$orginialImage)
-                
-            }else{ // Sharing Image View
-                StyleTransferShareView(uploadData: styleTransferData(imageLink: self.outputImageUrl)) // passing data through screen
             }
         }
     }
