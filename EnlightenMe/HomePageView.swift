@@ -26,8 +26,8 @@ struct HomePageView: View {
                             Spacer()
                         }
                         
-                        ForEach(0..<10){ index in // The Content Post View
-                            SimpleConetentPostView()
+                        ForEach(0..<sortedPost.count, id:\.self){ index in // The Content Post View
+                            SimpleConetentPostView(data:sortedPost[index], imageURL:sortedImageURL[index])
                             
                         }
                         
