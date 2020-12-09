@@ -9,9 +9,7 @@ import SwiftUI
 
 struct SimpleConetentPostView: View {
     @State private var ProfilePictures = "ProfilePicture Placeholder"
-    @State private var ProfileName = "PlaceHolder Name"
-    @State private var madeWith = "Neural Style Transfere"
-    @State private var Likes = 0
+    @State private var ProfileName = "Mr.Random"
     
     var body: some View {
         VStack{ // The Stack of the Image

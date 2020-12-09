@@ -23,7 +23,7 @@ struct PostContentView: View {
                         .frame(width:50, height:50)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     
-                    Text("\(data.accountId)")
+                    Text("\(userName)")
                 }
                 
                 

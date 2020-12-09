@@ -16,33 +16,9 @@ struct HomePageView: View {
         NavigationView{
             VStack{
                 ScrollView{
-                    
-                    Group{ // The group for the Enlighten Me
-                        HStack{
-                            Text("   About Projects:") // The Space Bars are for the better looking view
-                            Spacer()
-                        }
-                        
-                        ScrollView(.horizontal, showsIndicators: false){ // The scroll View
-                            HStack{ // The Navigation Link for About Project Page
-                                HStack{
-                                    ForEach(0..<aboutProjectLinkInfo.count){index in
-                                        NavigationLink(destination: Text("PlaceHolder") ){
-                                            AboutProjectLinkView(Data: aboutProjectLinkInfo[index])
-                                            
-                                        }
-                                    }
-                                }
-                            }
-                            
-                        }
-                        
-                        
-                        
-                    }
                     Group{
                         HStack{ // Title
-                            Text("   Followed User Post:")
+                            Text("User Posts: ").padding()
                             Spacer()
                         }
                         
