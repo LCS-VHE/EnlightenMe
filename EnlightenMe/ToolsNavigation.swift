@@ -34,16 +34,6 @@ struct ToolsNavigation: View {
                             }
                         }
                         
-                        
-//                        NavigationLink(destination: Text("Place Holder")){ // Real Human Face Creator
-//                            Text("Real Human Face Creator")
-//                        }
-//
-//                        NavigationLink(destination: Text("Place Holder")){ // Link to anime face creator
-//                            Text("William Shakespeare Generator")
-//                        }
-                        
-                        
                     }}
             }
          
