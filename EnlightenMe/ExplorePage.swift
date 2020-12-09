@@ -15,7 +15,7 @@ struct ExplorePage: View {
     
     @State private var sortedOtherPostData = [[ContentPostViewData]]() // Second page data
     @State private var sortedOtherImageURL = [[String]]()
-
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -28,9 +28,8 @@ struct ExplorePage: View {
                     
                     Group{ // Trending
                         ForEach(0..<sortedTrendingData.count, id: \.self){ num in
-                            HStack{
-                                SquareBoxPostView(imageurl: sortedTrendingImageURL[num], data: sortedTrendingData[num])
-                            }
+                            SquareBoxPostView(imageurl: sortedTrendingImageURL[num], data: sortedTrendingData[num])
+                            
                         }
                     }
                     
@@ -40,6 +39,9 @@ struct ExplorePage: View {
                     HStack{ // Other Post
                         Text("Other Posts")
                         Spacer()
+                        Button("Udate Posts"){
+                            self.grab_data() // Updating stuff
+                        }
                     }
                     Spacer()
                     
@@ -65,12 +67,12 @@ struct ExplorePage: View {
                 if let posts = try? JSONDecoder().decode(TrendingData.self, from: data){ // Data model, data input
                     
                     allPost = posts
-                    print(posts)
                     self.sortedTrendingImageURL = seperate_image_urls(data: self.allPost!.Trending)
                     self.sortedTrendingData = seperate_data_from_data(data: self.allPost!.Trending)
                     
                     self.sortedOtherPostData = seperate_data_from_data(data: self.allPost!.Others)
                     self.sortedOtherImageURL = seperate_image_urls(data: self.allPost!.Others)
+                    return
                 }
             }
         }.resume()
