@@ -25,6 +25,7 @@ struct StyleTransfereUtilityView: View {
         ScrollView{
             VStack{
                 HStack{
+                    Spacer()
                     Button("Share"){
                         // Share Image
                         share = true
@@ -38,6 +39,7 @@ struct StyleTransfereUtilityView: View {
                     Link(destination: URL(string:self.outputImageUrl)!) {
                         Text("Save Image")
                     }.padding()
+                    Spacer()
                 }
                 Group{
                     HStack{ // style image and image
