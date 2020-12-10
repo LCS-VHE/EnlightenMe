@@ -12,25 +12,25 @@ struct ContentView: View {
         TabView{
             HomePageView()
                 .tabItem{
-                    Image(systemName: "star.fill") // Place holder image
+                    Image(systemName: "homekit") // Place holder image
                     Text("Home Page") // Title Home Page
                 }
             
             ToolsNavigation()
                 .tabItem{
-                    Image(systemName: "star.fill")
+                    Image(systemName: "scribble")
                     Text("Utility")
                 }
             
             ExplorePage()
                 .tabItem{
-                    Image(systemName: "star.fill")
+                    Image(systemName: "viewfinder")
                     Text("Explore")
                 }
             
             ProfilePage()
                 .tabItem{
-                    Image(systemName: "star.fill")
+                    Image(systemName: "person.crop.circle.fill")
                     Text("Profile Page")
                 }
         

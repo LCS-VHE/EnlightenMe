@@ -54,10 +54,11 @@ struct HomePageView: View {
                     // Update on the main thread
                     DispatchQueue.main.async {
                         self.posts = posts
-                        self.sortedImageURL = seperate_image_urls(data: self.posts!.Posts)
-                        self.sortedPost = seperate_data_from_data(data: self.posts!.Posts)
+                        self.sortedImageURL += seperate_image_urls(data: self.posts!.Posts)
+                        self.sortedPost += seperate_data_from_data(data: self.posts!.Posts)
 
-                    }                    
+                    }
+                    print(self.sortedImageURL)
                     return
                 }
             }
