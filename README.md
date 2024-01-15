@@ -2,6 +2,7 @@
 
 
 Do you ever need inspiration for painting. EnlightenMe is an native IOS app built with SwiftUI to solve that problem. You could click on the link below to see a video of the app.
+Please the click the image below for the video to load. 
 
 [![EnlightenMe App](http://img.youtube.com/vi/QEhGlJHk5w8/0.jpg)](http://www.youtube.com/watch?v=QEhGlJHk5w8 "Cool Video")
 
